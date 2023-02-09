@@ -1,0 +1,547 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5523507985014201411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f802f5f1acd2e4cb6136c87815f4c2, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 8, y: -152}
+  ports:
+    keys:
+    - input
+    - exit
+    values:
+    - _fieldName: input
+      _node: {fileID: -5523507985014201411}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exitFalse
+        node: {fileID: -3539338555555040168}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -5523507985014201411}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: -917616466761358565}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  variables: {fileID: 11400000, guid: bc5ccc00ccc69b74f88d4e8422a8348f, type: 2}
+  actorName: '{TargetActor.ActorName}'
+  dialogueText: HI I'm an NPC
+  sprite: {fileID: 21300000, guid: a0487add164493a48943510b755434c3, type: 3}
+--- !u!114 &-3539338555555040168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 039b45edb5624abb9dd9790015cd0772, type: 3}
+  m_Name: Variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -232, y: -136}
+  ports:
+    keys:
+    - input
+    - exitTrue
+    - exitFalse
+    values:
+    - _fieldName: input
+      _node: {fileID: -3539338555555040168}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exit
+        node: {fileID: -3344492664245005356}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exitTrue
+      _node: {fileID: -3539338555555040168}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: -20632237452243126}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exitFalse
+      _node: {fileID: -3539338555555040168}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: -5523507985014201411}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  variables: {fileID: 11400000, guid: bc5ccc00ccc69b74f88d4e8422a8348f, type: 2}
+  variableName: isHippie
+  variableType: 3
+  variableValue: true
+  operatorType: 5
+--- !u!114 &-3344492664245005356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f4a7d20c1aae54e9353afc08ae9d55, type: 3}
+  m_Name: Start
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -296, y: -216}
+  ports:
+    keys:
+    - exit
+    values:
+    - _fieldName: exit
+      _node: {fileID: -3344492664245005356}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: -3539338555555040168}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  variables: {fileID: 0}
+--- !u!114 &-917616466761358565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd70b2f22da00d642a11feaf79c62f94, type: 3}
+  m_Name: Choice Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 232, y: -88}
+  ports:
+    keys:
+    - input
+    - Answers
+    - Answers 0
+    - Answers 1
+    - Answers 2
+    values:
+    - _fieldName: input
+      _node: {fileID: -917616466761358565}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exit
+        node: {fileID: -5523507985014201411}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: -20632237452243126}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Answers
+      _node: {fileID: -917616466761358565}
+      _typeQualifiedName: System.String[], mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Answers 0
+      _node: {fileID: -917616466761358565}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -302203812779857472}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: Answers 1
+      _node: {fileID: -917616466761358565}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 7423146453091357421}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: Answers 2
+      _node: {fileID: -917616466761358565}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: 6239179020173689962}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  variables: {fileID: 0}
+  Answers:
+  - Hi You're Not A Hippie
+  - Go Away
+  - You're A Hippie
+  actorName: '{SourceActor.ActorName}'
+  sprite: {fileID: 21300000, guid: 7b2d92b8620205840ae042ad6499820d, type: 3}
+  dialogueText: Choose a response
+--- !u!114 &-302203812779857472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 039b45edb5624abb9dd9790015cd0772, type: 3}
+  m_Name: Variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 488, y: -72}
+  ports:
+    keys:
+    - input
+    - exitTrue
+    - exitFalse
+    values:
+    - _fieldName: input
+      _node: {fileID: -302203812779857472}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Answers 0
+        node: {fileID: -917616466761358565}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exitTrue
+      _node: {fileID: -302203812779857472}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 4779330034413004095}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exitFalse
+      _node: {fileID: -302203812779857472}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  variables: {fileID: 11400000, guid: bc5ccc00ccc69b74f88d4e8422a8348f, type: 2}
+  variableName: isHippie
+  variableType: 3
+  variableValue: false
+  operatorType: 4
+--- !u!114 &-20632237452243126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f802f5f1acd2e4cb6136c87815f4c2, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 8, y: 104}
+  ports:
+    keys:
+    - input
+    - exit
+    values:
+    - _fieldName: input
+      _node: {fileID: -20632237452243126}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exitTrue
+        node: {fileID: -3539338555555040168}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -20632237452243126}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: -917616466761358565}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  variables: {fileID: 11400000, guid: bc5ccc00ccc69b74f88d4e8422a8348f, type: 2}
+  actorName: '{TargetActor.ActorName}'
+  dialogueText: 'YEAH MAN I"M A HIPPIE!  Hippie: {Variables.BoolVariables.Variables["isHippie"]}'
+  sprite: {fileID: 21300000, guid: a0487add164493a48943510b755434c3, type: 3}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b9b1e96b931e74c9120553962da057, type: 3}
+  m_Name: NPC1BasicGraph
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -3344492664245005356}
+  - {fileID: -5523507985014201411}
+  - {fileID: 7423146453091357421}
+  - {fileID: 4779330034413004095}
+  - {fileID: -917616466761358565}
+  - {fileID: 6239179020173689962}
+  - {fileID: 7604291261518205780}
+  - {fileID: -3539338555555040168}
+  - {fileID: -20632237452243126}
+  - {fileID: -302203812779857472}
+  start: {fileID: 0}
+  current: {fileID: 0}
+  initNode: {fileID: 0}
+--- !u!114 &4779330034413004095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26e24135bba4fa295f3735c273facc5, type: 3}
+  m_Name: Reference State
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 728, y: -56}
+  ports:
+    keys:
+    - input
+    - exitTrue
+    values:
+    - _fieldName: input
+      _node: {fileID: 4779330034413004095}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exitTrue
+        node: {fileID: -302203812779857472}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exitTrue
+      _node: {fileID: 4779330034413004095}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: entry
+        node: {fileID: 7423146453091357421}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  variables: {fileID: 0}
+  referenceState: Test
+--- !u!114 &6239179020173689962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26e24135bba4fa295f3735c273facc5, type: 3}
+  m_Name: Reference State
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 488, y: 264}
+  ports:
+    keys:
+    - input
+    - exitTrue
+    values:
+    - _fieldName: input
+      _node: {fileID: 6239179020173689962}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Answers 2
+        node: {fileID: -917616466761358565}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exitTrue
+      _node: {fileID: 6239179020173689962}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 7604291261518205780}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  variables: {fileID: 0}
+  referenceState: Hippie
+--- !u!114 &7423146453091357421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bedffd65def3fb4db60c989ff05df2c, type: 3}
+  m_Name: Exit
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1016, y: -8}
+  ports:
+    keys:
+    - entry
+    values:
+    - _fieldName: entry
+      _node: {fileID: 7423146453091357421}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Answers 1
+        node: {fileID: -917616466761358565}
+        reroutePoints: []
+      - fieldName: exitTrue
+        node: {fileID: 7604291261518205780}
+        reroutePoints: []
+      - fieldName: exitTrue
+        node: {fileID: 4779330034413004095}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  variables: {fileID: 0}
+--- !u!114 &7604291261518205780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 039b45edb5624abb9dd9790015cd0772, type: 3}
+  m_Name: Variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 712, y: 184}
+  ports:
+    keys:
+    - input
+    - exitTrue
+    - exitFalse
+    values:
+    - _fieldName: input
+      _node: {fileID: 7604291261518205780}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exitTrue
+        node: {fileID: 6239179020173689962}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exitTrue
+      _node: {fileID: 7604291261518205780}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: entry
+        node: {fileID: 7423146453091357421}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exitFalse
+      _node: {fileID: 7604291261518205780}
+      _typeQualifiedName: DLS.Dialogue.Connection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  variables: {fileID: 11400000, guid: bc5ccc00ccc69b74f88d4e8422a8348f, type: 2}
+  variableName: isHippie
+  variableType: 3
+  variableValue: true
+  operatorType: 4
