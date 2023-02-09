@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: NPC2DialogueManager
   m_EditorClassIdentifier: 
   currentReferenceState: 
-  currentInteraction: {fileID: 0}
+  currentInteraction: {fileID: 11400000, guid: a91c55a521401b642b4db48f18b9c3ca, type: 2}
   interactions:
   - {fileID: 11400000, guid: 755ebe536e30c0041b7665e5e30e43db, type: 2}
-  useRandomDialogueSelectionByWeight: 1
+  - {fileID: 11400000, guid: bf80a042a7f24fb40bf5b40a3b378738, type: 2}
+  - {fileID: 11400000, guid: a91c55a521401b642b4db48f18b9c3ca, type: 2}
+  - {fileID: 11400000, guid: 98e5c57d09763f447bc14ef7aacf5ac6, type: 2}
+  - {fileID: 11400000, guid: 4e53b8ea93ca7c24487250ab12240e99, type: 2}
+  - {fileID: 11400000, guid: ad06dc29845cf87499f4df04c82e411e, type: 2}
+  useRandomDialogueSelectionByWeight: 0

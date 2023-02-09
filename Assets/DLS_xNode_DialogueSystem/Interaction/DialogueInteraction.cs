@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace DLS.Dialogue
@@ -40,6 +41,21 @@ namespace DLS.Dialogue
         }
     
         public bool RepeatableDialogue { get => repeatableDialogue; set => repeatableDialogue = value; }
+
+        private void OnEnable()
+        {
+            Application.quitting += ApplicationOnquitting;
+        }
+
+        private void ApplicationOnquitting()
+        {
+            dialogueCompleted = false;
+        }
+
+        private void OnDisable()
+        {
+            Application.quitting -= ApplicationOnquitting;
+        }
 
         public void StartDialogue()
         {

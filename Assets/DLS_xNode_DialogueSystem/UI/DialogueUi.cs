@@ -248,10 +248,6 @@ namespace DLS.Dialogue
             switch (nodeName)
             {
                 case "StartNode":
-                    /*if (playerController != null)
-                {
-                    playerController.DisableMovement = true;
-                }*/
                     NextNode("exit");
                     break;
                 case "DialogueNode":
